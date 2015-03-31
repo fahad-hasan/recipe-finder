@@ -1,4 +1,5 @@
 #Recipe Finder
+Disclaimer: This program has been written as a submission to a technical test.
 This program makes a suggestion on what to cook based on a given list of recipes with ingredients and a list of items in the fridge.
 
 ####Features
