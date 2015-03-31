@@ -2,6 +2,7 @@
 include join(DIRECTORY_SEPARATOR, ["..", "src", "item.class.php"]);
 include join(DIRECTORY_SEPARATOR, ["..", "src", "fridge.class.php"]);
 include join(DIRECTORY_SEPARATOR, ["..", "src", "recipe.class.php"]);
+include join(DIRECTORY_SEPARATOR, ["..", "src", "dataloader.class.php"]);
 include join(DIRECTORY_SEPARATOR, ["..", "src", "finder.class.php"]);
 
 class testRecipeFinder extends PHPUnit_Framework_TestCase
