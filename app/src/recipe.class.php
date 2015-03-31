@@ -93,11 +93,17 @@ class RecipeCollection {
 
 	//Get all the Recipes from the list
 	public static function getItems() {
-		return self::$items;
+		return self::$recipes;
+	}
+
+	//Resets recipe collection
+	//Clears fridge items
+	public static function clear() {
+		self::$recipes = array();
 	}
 
 	//Suggest a Recipe based on various business logics
-	public static function getSuggestion() {
+	public static function getSuggestions() {
 
 		$sorted_recipes = array();
 		//Seperate the Recipes that canBeCooked
@@ -113,12 +119,9 @@ class RecipeCollection {
 			usort($sorted_recipes, function($a, $b) {
 				return ($a->cook_by > $b->cook_by);
 			});
-			//Print the Recipe name on top of the list
-			echo reset($sorted_recipes)->name;
-		} else {
-			//Sorry, time to pick up the phone!
-			return "Order Takeout";
 		}
+		//Return sorted array
+		return $sorted_recipes;
 	}
 }
 

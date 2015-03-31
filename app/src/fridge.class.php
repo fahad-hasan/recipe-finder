@@ -55,6 +55,11 @@ class Fridge {
 		return self::$items;
 	}
 
+	//Clears fridge items
+	public static function clear() {
+		self::$items = array();
+	}
+
 	//Check if a RecipeItem has enough usable item inside the Fridge
 	public static function hasEnoughUsableItem(RecipeItem $rItem) {
 		//Loop inside Fridge items

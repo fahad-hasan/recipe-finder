@@ -25,6 +25,6 @@ if (!empty($options['csv']) && !empty($options['json'])) {
 	print("Usage:\r\n\r\n");
 	print("--csv:\tRequired\tThe location of the CSV Fridge items file\r\n");
 	print("--json:\tRequired\tThe location of the JSON Recipes file\r\n\r\n");
-	print("In order to run the unit tests, please run \"phpunit --verbose ..".DIRECTORY_SEPARATOR."tests".DIRECTORY_SEPARATOR."tests.php\"\r\n");
+	print("In order to run the unit tests, please navigate to app > tests directory and run \"phpunit --verbose tests.php\"\r\n");
 }
 ?>
