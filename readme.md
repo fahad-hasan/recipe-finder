@@ -2,6 +2,10 @@
 Disclaimer: This program has been written as a submission to a technical test.
 This program makes a suggestion on what to cook based on a given list of recipes with ingredients and a list of items in the fridge.
 
+####Technical Details
+- This is a command line program and must be run from a command prompt.
+- This program was tested using Apache server installed on a Windows machine.
+
 ####Features
 - Fridge items that has expired, can not be used for cooking
 - In case of multiple recipe match, the one having an ingredient expiring soon will have preference
