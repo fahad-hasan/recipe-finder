@@ -14,11 +14,9 @@ Get command line options
 */
 $options = getopt("c:j:t", ["csv:", "json:"]);
 if (!empty($options['csv']) && !empty($options['json'])) {
-	if (file_exists($options['csv']) && file_exists($options['json'])) {
-		//Initialize a RecipeFinder object based on command line args
-		$finder = new RecipeFinder($options['csv'], $options['json']);
-		$finder->find();
-	}
+	//Initialize a RecipeFinder object based on command line args
+	$finder = new RecipeFinder($options['csv'], $options['json']);
+	$finder->find();
 } else {
 	//Print help texts and tests
 	print("Welcome to Recipe Finder!\r\n");

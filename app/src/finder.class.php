@@ -11,7 +11,6 @@ class RecipeFinder {
 		//Load CSV into Fridge
 		DataLoader::loadFridgeFromCSV($_csv);
 		
-
 		//Load JSON into RecipeCollection
 		DataLoader::loadRecipesFromJSON($_json);
 	}

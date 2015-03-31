@@ -18,6 +18,9 @@ class DataLoader {
 				}
 			}
 			fclose($file);
+		} else {
+			echo "ERROR: Can not find the specified CSV file.\r\n";
+			exit();
 		}
 	}
 
@@ -29,6 +32,9 @@ class DataLoader {
 			foreach($recipes_json as $recipeObj) {
 				$recipe = RecipeCollection::create($recipeObj->name, $recipeObj->ingredients);
 			}
+		} else {
+			echo "ERROR: Can not find the specified JSON file.\r\n";
+			exit();
 		}
 	}
 
