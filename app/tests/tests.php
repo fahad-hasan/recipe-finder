@@ -82,6 +82,8 @@ class testRecipeFinder extends PHPUnit_Framework_TestCase
     }
 
     public function testCSVLoader() {
+
+    	//Sample array
     	$list = array (
 		    array('bread','10','slices','25/12/2015'),
 		    array('cheese','10','slices','24/12/2015'),
@@ -90,19 +92,21 @@ class testRecipeFinder extends PHPUnit_Framework_TestCase
 				array('mixed salad','500','grams','26/12/2015')
 			);
 
+    	//Write the array into a CSV file
 			$fp = fopen('csv_test.csv', 'w');
-
 			foreach ($list as $fields) {
 			    fputcsv($fp, $fields);
 			}
-
 			fclose($fp);
+
+			//Check if the CSV was loaded properly
     	$items = DataLoader::getArrayFromCSV('csv_test.csv');
-    	//unlink('csv_test.csv');
-    	$this->assertEquals(5, count($items));
+	   	$this->assertEquals(5, count($items));
     }
 
     public function testJSONLoader() {
+    	
+    	//Sample JSON string
     	$json_string = 
     	'[
 				{
@@ -121,16 +125,21 @@ class testRecipeFinder extends PHPUnit_Framework_TestCase
 				}
 			]';
 			
+			//Write the JSON to a file
 			$fp = fopen('json_test.json', 'w');
 			fwrite($fp, $json_string);
 			fclose($fp);
+
+			//Check if the JSON was loaded properly
 			$items = DataLoader::getArrayFromJSON('json_test.json');
-			//unlink('json_test.json');
 			$this->assertEquals(2, count($items));
     }
 
     public function testFinder() {
+    	//We already have sample files
     	$finder = new RecipeFinder('csv_test.csv', 'json_test.json');
+
+    	//Based on the sample files, check if the program prints "grilled cheese on toast"
     	$this->expectOutputString('grilled cheese on toast');
 			$finder->find();
     }
